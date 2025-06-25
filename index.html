@@ -544,20 +544,27 @@
                     <div class="flow-arrow">→</div>
                     <div class="flow-box process">🔍 Extraction & Chunking</div>
                     <div class="flow-arrow">→</div>
-                    <div class="flow-box process">📊 Analyse TF-IDF</div>
+                    <div class="flow-box process">📊 TF-IDF & FuzzyWuzzy</div>
                     <div class="flow-arrow">→</div>
                     <div class="flow-box process">🤖 IA Groq/Llama-3</div>
                     <div class="flow-arrow">→</div>
-                    <div class="flow-box output">🎓 Cours Adapté</div>
+                    <div class="flow-box output">🗂️ Base de Connaissance</div>
                 </div>
                 <div class="flow-diagram">
                     <div class="flow-box input">📈 Performances Étudiant</div>
                     <div class="flow-arrow">→</div>
-                    <div class="flow-box process">🎯 Analyse Points Faibles</div>
+                    <div class="flow-box process">🎯 Analyse Points Faibles </div>
                     <div class="flow-arrow">→</div>
-                    <div class="flow-box process">⚙️ Personnalisation RAG</div>
+                    <div class="flow-box process">🧠 Embedding RAG</div>
                     <div class="flow-arrow">→</div>
-                    <div class="flow-box output">📚 Recommandations</div>
+                    <div class="flow-box output">🎓 Cours Adapté + 📚 Recommandations</div>
+                </div>
+                <div class="flow-diagram combined">
+                    <div class="flow-box input">🗂️ Base de Connaissance + 🎯 Points Faibles</div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-box process">⚡ Moteur de Personnalisation</div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-box output">✨ Contenu Pédagogique Ciblé</div>
                 </div>
             </div>
 
@@ -630,6 +637,28 @@
                         <strong>PyPDF2</strong>
                         <p>Traitement de PDF</p>
                     </div>
+                    <!-- Technologies ajoutées -->
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <strong>FuzzyWuzzy</strong>
+                        <p>Similarité textuelle</p>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <i class="fas fa-vector-square"></i>
+                        </div>
+                        <strong>Embedding</strong>
+                        <p>Représentation vectorielle</p>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <strong>Scikit-learn</strong>
+                        <p>Clustering & ML (KMeans, PCA)</p>
+                    </div>
                 </div>
             </div>
 
@@ -668,8 +697,15 @@
                     python-dotenv>=1.0.0<br><br>
                     
                     # Data Processing<br>
+                    pandas>=2.0.0<br>
+                    numpy>=1.24.0<br>
                     PyPDF2>=3.0.1<br>
                     pydantic>=2.4.0<br><br>
+                    
+                    # Machine Learning & NLP<br>
+                    scikit-learn>=1.3.0<br>
+                    fuzzywuzzy>=0.18.0<br>
+                    python-Levenshtein>=0.23.0  # Accélération pour FuzzyWuzzy<br><br>
                     
                     # Visualization<br>
                     plotly>=5.17.0<br><br>
@@ -677,9 +713,9 @@
                     # UI Components<br>
                     extra-streamlit-components>=0.1.56<br><br>
                     
-                    # Utilities<br>
-                    typing-extensions>=4.8.0<br>
-                    pymongo>=4.5.0
+                    # Database & Utilities<br>
+                    pymongo>=4.5.0<br>
+                    typing-extensions>=4.8.0
                 </div>
             </div>
 
@@ -701,6 +737,9 @@
                             <li><strong>Base de Données</strong> - Stockage MySQL et MongoDB</li>
                             <li><strong>Moteur d'Analyse</strong> - Évaluation des performances</li>
                             <li><strong>Système de Recommandation</strong> - Adaptation personnalisée</li>
+                            <!-- Nouveaux éléments ajoutés -->
+                            <li><strong>Extraction de Mots Clés</strong> - FuzzyWuzzy & TF-IDF pour identification des concepts clés</li>
+                            <li><strong>Clustering des Étudiants</strong> - KMeans pour regroupement par similarité de performance</li>
                         </ul>
                     </div>
                     
@@ -711,10 +750,10 @@
                         
                         <h4><i class="fas fa-chalkboard-teacher"></i> Pour les Professeurs</h4>
                         <ul class="feature-list">
-                            <li>Créer et gérer des groupes d'étudiants</li>
-                            <li>Télécharger des documents PDF ou texte</li>
-                            <li>Analyser les performances des étudiants</li>
-                            <li>Générer des rapports détaillés</li>
+                            <li>Télécharger des documents PDF </li>
+                            <li>Analyser les performances des étudiants par group , cour</li>
+                            <li>Générer des groupes automatique</li>
+                            <li>Partager les cours  </li>
                         </ul>
                         
                         <h4 style="margin-top: 15px;"><i class="fas fa-user-graduate"></i> Pour les Étudiants</h4>
